@@ -1,0 +1,448 @@
+*,
+*::before,
+*::after {
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --verde-uniguajira: #006837;
+    --verde-hover: #00502a;
+    --fondo-admin: #f8f9fa;
+    --borde-admin: #e1e5e9;
+    --primary: #006837;
+    --primary-fg: #fff;
+    --secondary: #00502a;
+    --accent: #e8f2ec;
+    --body-fg: #212529;
+    --body-bg: #f8f9fa;
+    --body-quiet-color: #6c757d;
+    --body-loud-color: #212529;
+    --header-bg: #006837;
+    --header-color: #fff;
+    --header-branding-color: #fff;
+    --header-link-color: #fff;
+    --breadcrumbs-bg: #fff;
+    --breadcrumbs-fg: #495057;
+    --breadcrumbs-link-fg: #006837;
+    --link-fg: #006837;
+    --link-hover-color: #00502a;
+    --link-selected-fg: #00502a;
+    --hairline-color: #e1e5e9;
+    --border-color: #ced4da;
+    --darkened-bg: #f1f3f5;
+    --selected-bg: #e9ecef;
+    --selected-row: #e8f2ec;
+    --button-fg: #fff;
+    --button-bg: #006837;
+    --button-hover-bg: #00502a;
+    --default-button-bg: #006837;
+    --default-button-hover-bg: #00502a;
+    --object-tools-fg: #fff;
+    --object-tools-bg: #006837;
+    --object-tools-hover-bg: #00502a;
+    --font-family-primary: 'Roboto', sans-serif;
+}
+
+body,
+#container {
+    background: var(--fondo-admin);
+    color: #212529;
+}
+
+#header {
+    background: var(--verde-uniguajira);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+}
+
+#branding h1 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+#branding .admin-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-brand img {
+    width: 40px;
+    height: 40px;
+}
+
+.admin-brand span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.admin-brand strong {
+    font-size: 1.15rem;
+}
+
+.admin-brand small {
+    margin-top: 3px;
+    font-size: .75rem;
+    font-weight: 400;
+    opacity: .8;
+}
+
+#user-tools {
+    color: rgba(255, 255, 255, .9);
+}
+
+#user-tools a:link,
+#user-tools a:visited {
+    color: #fff;
+}
+
+#user-tools a:hover {
+    color: #e4f1e9;
+}
+
+#content {
+    padding-top: 24px;
+}
+
+#content h1 {
+    color: var(--verde-uniguajira);
+    font-weight: 700;
+}
+
+div.breadcrumbs {
+    background: #fff;
+    color: #495057;
+    border-bottom: 1px solid var(--borde-admin);
+}
+
+div.breadcrumbs a:link,
+div.breadcrumbs a:visited {
+    color: var(--verde-uniguajira);
+}
+
+.module,
+#changelist,
+#changelist-filter,
+#changelist-form .results,
+.inline-group {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--borde-admin);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(33, 37, 41, .05);
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+    background: var(--verde-uniguajira);
+    color: #fff;
+}
+
+.module a:link,
+.module a:visited,
+#content-main a:link,
+#content-main a:visited,
+#changelist-filter a:link,
+#changelist-filter a:visited {
+    color: var(--verde-uniguajira);
+}
+
+#content-main table,
+#changelist table {
+    background: #fff;
+}
+
+#content-main thead th,
+#changelist thead th {
+    background: #f1f3f5;
+}
+
+#content-main tr:hover,
+#changelist tbody tr:hover {
+    background: #f6faf7;
+}
+
+.button,
+input[type="submit"],
+input[type="button"],
+.submit-row input,
+a.button,
+.object-tools a:link,
+.object-tools a:visited {
+    background: var(--verde-uniguajira);
+    border: 1px solid var(--verde-uniguajira);
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.submit-row input:hover,
+a.button:hover,
+.object-tools a:hover {
+    background: var(--verde-hover);
+    border-color: var(--verde-hover);
+    color: #fff;
+}
+
+input,
+select,
+textarea,
+.vTextField {
+    border-color: #ced4da;
+    border-radius: 4px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--verde-uniguajira);
+    outline-color: rgba(0, 104, 55, .2);
+}
+
+#changelist-filter {
+    padding-bottom: 8px;
+}
+
+#changelist-filter h2 {
+    background: var(--verde-uniguajira);
+    color: #fff;
+}
+
+#changelist-filter h3 {
+    color: #495057;
+}
+
+.messagelist li {
+    border-radius: 4px;
+}
+
+#footer {
+    border-top: 1px solid var(--borde-admin);
+    color: #6c757d;
+}
+
+.login #container {
+    overflow: hidden;
+    border: 1px solid var(--borde-admin);
+    border-radius: 6px;
+    box-shadow: 0 4px 18px rgba(33, 37, 41, .08);
+}
+
+.dashboard #content {
+    width: auto;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 28px 32px 40px;
+}
+
+.admin-dashboard-heading {
+    margin-bottom: 24px;
+}
+
+.admin-dashboard-heading p {
+    margin: 0 0 5px;
+    color: #6c757d;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.admin-dashboard-heading h1 {
+    margin: 0 0 6px;
+    color: var(--verde-uniguajira);
+    font-size: 1.65rem;
+}
+
+.admin-dashboard-heading span {
+    color: #6c757d;
+    font-size: .95rem;
+}
+
+.admin-app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    gap: 18px;
+}
+
+.admin-app-section,
+.admin-recent-activity,
+.admin-empty-state {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--borde-admin);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(33, 37, 41, .05);
+}
+
+.admin-app-section h2 {
+    margin: 0;
+    padding: 14px 18px;
+    background: var(--verde-uniguajira);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.admin-resource {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    min-height: 76px;
+    padding: 13px 18px;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.admin-resource:last-child {
+    border-bottom: 0;
+}
+
+.admin-resource:hover {
+    background: #f6faf7;
+}
+
+.admin-resource-info {
+    display: grid;
+    gap: 4px;
+}
+
+.admin-resource-name {
+    color: #212529;
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+.admin-resource-name:hover {
+    color: var(--verde-uniguajira);
+}
+
+.admin-resource-caption {
+    color: #6c757d;
+    font-size: .8rem;
+}
+
+.admin-resource-actions {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+}
+
+.admin-resource-actions a {
+    display: inline-block;
+    padding: 7px 10px;
+    border: 1px solid var(--verde-uniguajira);
+    border-radius: 5px;
+    font-size: .8rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.admin-action-add {
+    background: #fff;
+    color: var(--verde-uniguajira) !important;
+}
+
+.admin-action-manage {
+    background: var(--verde-uniguajira);
+    color: #fff !important;
+}
+
+.admin-resource-actions a:hover {
+    background: var(--verde-hover);
+    border-color: var(--verde-hover);
+    color: #fff !important;
+}
+
+.admin-recent-activity {
+    margin-top: 18px;
+    padding: 18px;
+}
+
+.admin-recent-activity h2 {
+    margin: 0 0 16px;
+    color: var(--verde-uniguajira);
+    font-size: 1.05rem;
+}
+
+.admin-recent-activity h3 {
+    margin: 0 0 10px;
+    color: #495057;
+    font-size: .88rem;
+}
+
+.admin-recent-activity ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.admin-recent-activity li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+    border-top: 1px solid #edf0f2;
+}
+
+.admin-activity-type {
+    min-width: 82px;
+    color: var(--verde-uniguajira);
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.admin-activity-model {
+    color: #6c757d;
+    font-size: .8rem;
+}
+
+.admin-empty-state {
+    padding: 24px;
+}
+
+.admin-empty-state h2 {
+    margin: 0;
+    color: #495057;
+    font-size: 1rem;
+}
+
+@media (max-width: 767px) {
+    #content {
+        padding: 16px;
+    }
+
+    #header {
+        padding: 10px 14px;
+    }
+
+    #user-tools {
+        margin-top: 8px;
+        text-align: left;
+    }
+
+    #changelist-filter {
+        width: 100%;
+        margin: 12px 0 0;
+    }
+
+    .dashboard #content {
+        padding: 20px 16px 32px;
+    }
+
+    .admin-dashboard-heading h1 {
+        font-size: 1.4rem;
+    }
+
+    .admin-resource {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

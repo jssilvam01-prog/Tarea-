@@ -1,0 +1,75 @@
+{% extends "admin/base_site.html" %}
+{% load i18n log static %}
+
+{% block title %}Panel de Administración | Uniguajira{% endblock %}
+{% block coltype %}dashboard{% endblock %}
+{% block content_title %}{% endblock %}
+{% block nav-breadcrumbs %}{% endblock %}
+{% block nav-sidebar %}{% endblock %}
+
+{% block content %}
+    <header class="admin-dashboard-heading">
+        <div>
+            <p>UNIVERSIDAD DE LA GUAJIRA</p>
+            <h1>Panel de administración</h1>
+            <span>Gestiona cursos, estudiantes y registros de asistencia.</span>
+        </div>
+    </header>
+
+    {% if app_list %}
+        <div class="admin-app-grid">
+            {% for app in app_list %}
+                <section class="admin-app-section">
+                    <h2>{% if app.app_label == 'auth' %}Usuarios y permisos{% else %}{{ app.name }}{% endif %}</h2>
+                    <div class="admin-resource-list">
+                        {% for model in app.models %}
+                            <article class="admin-resource">
+                                <div class="admin-resource-info">
+                                    {% if model.admin_url %}
+                                        <a class="admin-resource-name" href="{{ model.admin_url }}">{{ model.name }}</a>
+                                    {% else %}
+                                        <span class="admin-resource-name">{{ model.name }}</span>
+                                    {% endif %}
+                                    <span class="admin-resource-caption">
+                                        {% if model.object_name == 'Curso' %}Grupos y docentes{% elif model.object_name == 'Estudiante' %}Información e inscripciones{% elif model.object_name == 'Asistencia' %}Registros por fecha{% elif model.object_name == 'User' %}Cuentas de acceso{% elif model.object_name == 'Group' %}Roles de acceso{% else %}Administración de {{ model.name|lower }}{% endif %}
+                                    </span>
+                                </div>
+                                <div class="admin-resource-actions">
+                                    {% if model.add_url %}<a class="admin-action-add" href="{{ model.add_url }}">Agregar</a>{% endif %}
+                                    {% if model.admin_url %}<a class="admin-action-manage" href="{{ model.admin_url }}">Administrar</a>{% endif %}
+                                </div>
+                            </article>
+                        {% endfor %}
+                    </div>
+                </section>
+            {% endfor %}
+        </div>
+    {% else %}
+        <section class="admin-empty-state">
+            <h2>No tienes permisos para administrar registros.</h2>
+        </section>
+    {% endif %}
+
+    <section class="admin-recent-activity">
+        <h2>Actividad reciente</h2>
+        <h3>Mis acciones</h3>
+        {% get_admin_log 6 as admin_log for_user user %}
+        {% if admin_log %}
+            <ul>
+                {% for entry in admin_log %}
+                    <li>
+                        <span class="admin-activity-type">{% if entry.is_addition %}Nuevo{% elif entry.is_change %}Actualizado{% elif entry.is_deletion %}Eliminado{% endif %}</span>
+                        {% if entry.is_deletion or not entry.get_admin_url %}
+                            <span>{{ entry.object_repr }}</span>
+                        {% else %}
+                            <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
+                        {% endif %}
+                        {% if entry.content_type %}<span class="admin-activity-model">{{ entry.content_type.name }}</span>{% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aún no hay acciones registradas.</p>
+        {% endif %}
+    </section>
+{% endblock %}
